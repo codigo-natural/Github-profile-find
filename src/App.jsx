@@ -5,7 +5,7 @@ import Searcher from './components/Searcher';
 const App = () => {
   return (
     <Container sx={{
-      background: '#3fc',
+      background: '#6c757d',
       width: '80vw',
       height: '500px',
       borderRadius: '16px',

@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Stack } from '@mui/system'
 import { IconButton, TextField } from '@mui/material'
 import SearchIcon from "@mui/icons-material/Search";
 
-const Searcher = () => {
+const Searcher = (props) => {
+
+  const { setInputUser } = props;
+
+  const [valueInput, setValueInput] = useState('')
+
+  const onSearchValueChange = (event) => {
+    const inputValue = event.target.value
+    setValueInput(inputValue)
+  }
+
+  const handleSubmit = () => {
+    setInputUser(valueInput)
+  }
   const estilos = {
     marginTop: '30px',
     width: '80%'
@@ -21,12 +34,17 @@ const Searcher = () => {
         autoComplete='off'
         label='GitHub User'
         size='small'
+        value={valueInput}
+        onChange={onSearchValueChange}
         id='outline-basic'
         variant='outlined'
         placeholder='octocat'
         InputProps={{
           endAdornment: (
-            <IconButton size='small'>
+            <IconButton
+              size='small'
+              onClick={handleSubmit}
+            >
               <SearchIcon />
             </IconButton>
           )

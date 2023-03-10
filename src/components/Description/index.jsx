@@ -1,8 +1,22 @@
-import React from 'react'
+import { Typography } from '@mui/material';
+import { Stack } from '@mui/system';
+import React, { Fragment } from 'react'
 
-const Description = () => {
+const Description = (props) => {
+  const { userState } = props;
+  const { bio } = userState;
   return (
-    <div>Description</div>
+    <Fragment>
+      <Stack>
+        {
+          bio !== null
+          ? <Typography>{bio}</Typography>
+          : <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quia non aliquam eum deleniti dolorum eos iste nam quidem? Recusandae nesciunt </Typography>
+        }
+      </Stack>
+      {/* <PaperInformation /> */}
+      {/* <LocationInformation /> */}
+    </Fragment>
   )
 }
 

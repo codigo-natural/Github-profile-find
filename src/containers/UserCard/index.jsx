@@ -1,5 +1,6 @@
 import { CardMedia, Grid } from '@mui/material'
 import React from 'react'
+import Description from '../../components/Description';
 import PrincipalInformation from '../../components/PrincipalInformation';
 
 const UserCard = (props) => {
@@ -17,7 +18,7 @@ const UserCard = (props) => {
       <Grid item xs={9}>
         <PrincipalInformation userState={userState} />
       </Grid>
-      {/* <Description /> */}
+      <Description userState={userState} />
     </Grid>
   )
 }

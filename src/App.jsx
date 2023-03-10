@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container } from '@mui/material'
 import Searcher from './components/Searcher';
 import { getGithubUsers } from './services/users'
+import UserCard from './containers/userCard';
 
 const App = () => {
 
@@ -24,7 +25,6 @@ const App = () => {
       setUserState(userResponse)
     }
   }
-  console.log(userState)
 
   useEffect(() => {
     gettinUser(inputUser)
@@ -42,6 +42,7 @@ const App = () => {
       alignItems: 'center'
     }}>
       <Searcher inputUser={inputUser} setInputUser={setInputUser} />
+      <UserCard userState={userState} />
     </Container>
   )
 }

@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { Stack } from '@mui/system'
-import { IconButton, TextField } from '@mui/material'
+import { IconButton, TextField, Typography } from '@mui/material'
 import SearchIcon from "@mui/icons-material/Search";
 
-const Searcher = (props) => {
-
-  const { setInputUser } = props;
+const Searcher = ({ setInputUser, notFound }) => {
 
   const [valueInput, setValueInput] = useState('')
 
@@ -27,7 +25,7 @@ const Searcher = (props) => {
   }
 
   return (
-    <Stack direction='row' sx={estilos}>
+    <><Stack direction='row' sx={estilos}>
       <TextField
         sx={styleTextField}
         type='search'
@@ -48,9 +46,12 @@ const Searcher = (props) => {
               <SearchIcon />
             </IconButton>
           )
-        }}
-      />
-    </Stack >
+        }} />
+    </Stack><Typography color='red'>
+        {notFound
+          ? 'Error: usuario no existe'
+          : ''}
+      </Typography></>
   )
 }
 

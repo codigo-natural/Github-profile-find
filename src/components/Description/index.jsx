@@ -9,11 +9,15 @@ const Description = (props) => {
   const { bio } = userState;
   return (
     <Fragment>
-      <Stack>
+      <Stack 
+      sx={{
+        justifyContent: 'center'
+      }}
+      >
         {
           bio !== null
-            ? <Typography>{bio}</Typography>
-            : <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quia non aliquam eum deleniti dolorum eos iste nam quidem? Recusandae nesciunt </Typography>
+            ? <Typography variant='body1'>{bio}</Typography>
+            : <Typography variant='body1'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, quia non aliquam eum deleniti dolorum eos iste nam quidem? Recusandae nesciunt </Typography>
         }
       </Stack>
       <PaperInformation userState={userState} />

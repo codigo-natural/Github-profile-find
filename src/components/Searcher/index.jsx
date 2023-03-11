@@ -4,7 +4,6 @@ import { IconButton, TextField, Typography } from '@mui/material'
 import SearchIcon from "@mui/icons-material/Search";
 
 const Searcher = ({ setInputUser, notFound }) => {
-
   const [valueInput, setValueInput] = useState('')
 
   const onSearchValueChange = (event) => {

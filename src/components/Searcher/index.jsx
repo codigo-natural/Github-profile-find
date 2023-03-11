@@ -26,7 +26,9 @@ const Searcher = ({ setInputUser, notFound }) => {
 
   return (
     <Fragment>
-      <Stack direction='row' sx={estilos}>
+      <Stack
+        direction='row'
+        sx={estilos}>
         <TextField
           sx={styleTextField}
           type='search'
@@ -41,8 +43,8 @@ const Searcher = ({ setInputUser, notFound }) => {
           InputProps={{
             endAdornment: (
               <IconButton
-                size='small'
                 onClick={handleSubmit}
+                size='small'
               >
                 <SearchIcon />
               </IconButton>

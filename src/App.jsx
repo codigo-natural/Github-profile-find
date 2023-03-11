@@ -33,13 +33,14 @@ const App = () => {
 
   const containerStyles = {
     background: '#bbdefb',
-    width: '80vw',
-    height: '500px',
+    width: { xs: '90vw', md: '80vw' },
+    height: { xs: "100%", md: "80vh", lg: "500px" },
     borderRadius: '16px',
-    marginTop: '20px',
+    marginTop: { xs: "15px", md: "30px", lg: "40px" },
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingBottom: { xs: "1rem", sm: "3rem", lg: "0" }
   }
 
   return (
